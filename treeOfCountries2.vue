@@ -1,10 +1,10 @@
 <template> 
   <div>
     <a-tree 
-          v-model:selectedKeys="selectedKeys" 
-          :tree-data="treeData" 
-          show-icon
-      >
+      v-model:selectedKeys="selectedKeys" 
+      :tree-data="treeData" 
+      show-icon
+    >
       <template #switcherIcon="{ switcherCls }">
         <DeploymentUnitOutlined :class="switcherCls" />
       </template>
@@ -22,17 +22,7 @@ import { DeploymentUnitOutlined } from '@ant-design/icons-vue';
 import { countries } from 'country-list-json';
 
 const countryList = countries;
-function getFlagEmoji(countryCode) {
-  const codePoints = countryCode
-    .toUpperCase()
-    .split('')
-    .map(char =>  127397 + char.charCodeAt());
-  return String.fromCodePoint(...codePoints);
-};
-console.log('zzz', getFlagEmoji('ab'));
-
 const selectedKeys = ref(['0-0-0']);
-
 const treeData = countryList.map((nation, indexNation) => ({
     title: nation.name + ' (' + nation.dial_code + ')',
     key: `0-${indexNation}`,
