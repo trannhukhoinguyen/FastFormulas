@@ -32,7 +32,7 @@ class Country {
   }
 };
 let countryTable = [];
-for(let i = 1; i <= 50; i++) {
+for(let i = 1; i <= 53; i++) {
   const countryTemp = new Country(
     i, 
     `countryName${i}`, 
