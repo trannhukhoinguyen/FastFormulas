@@ -1,3 +1,4 @@
+// Author/Source: https://github.com/HuuNghia2807
 export const onScrollToError = (errorInfo) => {
   if (errorInfo.errorFields?.length > 0) {
     const elementError =
