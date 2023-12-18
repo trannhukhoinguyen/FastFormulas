@@ -5,5 +5,11 @@ const calculateReducedAmounts = (
   totalReducedAmount, // total Reduced Amount - type: Number
   discountPercent, // percent of discount - type: Number (optional)
 ) => {
-
+  let amounts = [];
+  if(discountPercent) {
+    if(totalBeforeReduce) {
+      amounts = [];
+    }
+  }
+  amounts = [];
 }
