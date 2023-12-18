@@ -24,9 +24,9 @@ const calculateReducedAmounts = (
     reducedAmount2 = discountPercentTemp * amount2;
   }
   return {    
-    amount1: reducedAmount1.toFixed(2),
+    reducedAmount1: reducedAmount1.toFixed(2),
     payment1: (amount1 - reducedAmount1).toFixed(2),
-    amount2: reducedAmount2.toFixed(2),
+    reducedAmount2: reducedAmount2.toFixed(2),
     payment2: (amount2 - reducedAmount2).toFixed(2),
       //...    
   };
