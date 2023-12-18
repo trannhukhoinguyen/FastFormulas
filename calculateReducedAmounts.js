@@ -24,8 +24,8 @@ const calculateReducedAmounts = (
     reducedAmount2 = discountPercentTemp * amount2;
   }
   return {    
-      quantity1: reducedAmount1,
-      quantity2: reducedAmount2,
+      amount1: reducedAmount1,
+      amount2: reducedAmount2,
       //...    
   };
 }
