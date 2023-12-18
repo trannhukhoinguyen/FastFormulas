@@ -4,15 +4,15 @@ const calculateReducedAmounts = (
   totalBeforeReduce, // total Money before reducingn - type: Number (optional)
   totalReducedAmount, // total Reduced Amount - type: Number
   discountPercent, // percent of discount - type: Number (optional)
-  quantity1, // quantity of products 1 - type: Number
-  quantity2, // quantity of products 2 - type: Number (optional)
+  amount1, // quantity of products 1 - type: Number
+  amount2, // quantity of products 2 - type: Number (optional)
   //...
 ) => {
   let reducedAmount1;
   let reducedAmount2;
   if(discountPercent) {
-    reducedAmount1 = discountPercent * quantity1;
-    reducedAmount2 = discountPercent * quantity2;
+    reducedAmount1 = discountPercent * amount1;
+    reducedAmount2 = discountPercent * amount2;
   } else {
     let discountPercentTemp;
     if(totalBeforeReduce) {
@@ -20,8 +20,8 @@ const calculateReducedAmounts = (
     } else {
       discountPercentTemp = totalReducedAmount / (totalReducedAmount + totalAfterReduce);
     }
-    reducedAmount1 = discountPercentTemp * quantity1;
-    reducedAmount2 = discountPercentTemp * quantity2;
+    reducedAmount1 = discountPercentTemp * amount1;
+    reducedAmount2 = discountPercentTemp * amount2;
   }
   return {    
       quantity1: reducedAmount1,
