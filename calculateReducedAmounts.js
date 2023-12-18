@@ -10,12 +10,12 @@ const calculateReducedAmounts = (
 ) => {
   let reducedAmount1;
   let reducedAmount2;
-  if(discountPercent) {
+  if(!['', null, undefined].includes(discountPercent)) {
     reducedAmount1 = discountPercent * amount1;
     reducedAmount2 = discountPercent * amount2;
   } else {
     let discountPercentTemp;
-    if(totalBeforeReduce) {
+    if(!['', null, undefined].includes(totalBeforeReduce)) {
       discountPercentTemp = totalReducedAmount / totalBeforeReduce;
     } else {
       discountPercentTemp = totalReducedAmount / (totalReducedAmount + totalAfterReduce);
@@ -24,8 +24,10 @@ const calculateReducedAmounts = (
     reducedAmount2 = discountPercentTemp * amount2;
   }
   return {    
-      amount1: reducedAmount1,
-      amount2: reducedAmount2,
+    amount1: reducedAmount1,
+    payment1: amount1 - reducedAmount1,
+    amount2: reducedAmount2,
+    payment2: amount2 - reducedAmount2,
       //...    
   };
-}
+};
