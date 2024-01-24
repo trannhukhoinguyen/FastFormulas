@@ -1,0 +1,19 @@
+<template>
+  <div>
+    <button @click="downloadPdf">download PDF</button>
+  </div>
+</template>
+
+<script setup>
+const downloadPdf = () => {
+  const pdfFile = document.createElement('a');
+  pdfFile.href = this.pdfUrl;
+  pdfFile.target = '_blank';
+  pdfFile.download = this.pdfFileName;
+
+  // Simulate a click on the element <a>
+  document.body.appendChild(pdfFile);
+  pdfFile.click();
+  document.body.removeChild(pdfFile);
+}
+</script>
