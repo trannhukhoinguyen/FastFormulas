@@ -1,0 +1,18 @@
+// Simple Image or QR code Image
+<template>
+    <qrcode-vue :value="value" :level="level" :render-as="renderAs" id="qr-code"/>
+    <a-button @click="download">Download</a-button>
+</template>
+<script setup lang="ts">
+import { ref } from 'vue'
+import QrcodeVue, { Level, RenderAs } from 'qrcode.vue'
+const download = () => {
+    let aQrCode = document.createElement('a');
+    aQrCode.href = document.getElementById('qr-code')?.toDataURL();
+    aQrCode.download = "QRCode.png";
+    aQrCode.click();
+};
+const value = ref('qrcode')
+const level = ref<Level>('H')
+const renderAs = ref<RenderAs>('canvas')
+</script>
