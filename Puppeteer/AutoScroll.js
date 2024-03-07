@@ -1,24 +1,18 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-    const browser = await puppeteer.launch({
-        headless: false
-    });
-    const page = await browser.newPage();
-    await page.goto('https://www.yoursite.com');
-    await page.setViewport({
-        width: 1200,
-        height: 800
-    });
-
+ //Scroll to the Bottom of Page
     await autoScroll(page);
 
-    await page.screenshot({
-        path: 'yoursite.png',
-        fullPage: true
-    });
-
-    await browser.close();
+//Scroll to View
+/*    for (let i = 0; i < 20; i++) {
+        await page.evaluate((pax0VisaType, i) => {
+            const element = document.querySelector(pax0VisaType);
+            if(element) {
+                element.scrollIntoView();
+            }
+        }, pax0VisaType);
+    }*/
 })();
 
 async function autoScroll(page){
