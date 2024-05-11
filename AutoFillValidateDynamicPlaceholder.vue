@@ -49,8 +49,6 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue';
-
 const placeHolderSeoTitle = ref('');
 const placeHolderSlug = computed(() => {
     return placeHolderSeoTitle.value?.toLowerCase().trim().split(/[\s,\t,\n]+/).join('-')
